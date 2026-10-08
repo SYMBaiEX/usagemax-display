@@ -1,0 +1,15 @@
+[package]
+name = "trofeo-pump"
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+description = "Native LY frame transport for the Thermalright Trofeo Vision PM65/SUB3"
+
+[dependencies]
+rusb = { version = "0.9.4", features = ["vendored"] }
+
+[profile.release]
+lto = "thin"
+codegen-units = 1
+panic = "abort"
+strip = true

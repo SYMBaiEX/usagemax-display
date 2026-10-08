@@ -1,0 +1,60 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "usagemax-display"
+version = "0.1.0"
+description = "A portable telemetry renderer and plugin host for compact displays"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.10"
+dependencies = ["Pillow>=10.0"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Environment :: Console",
+  "Intended Audience :: Developers",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+]
+
+[project.optional-dependencies]
+usb = [
+  "pyusb>=1.2",
+  "libusb-package>=1.0.30; platform_system == 'Windows'",
+]
+metrics = ["psutil>=5.9", "nvidia-ml-py>=12"]
+dev = ["pytest>=8", "ruff>=0.8", "build>=1"]
+bundle = ["pyinstaller>=6"]
+
+[project.scripts]
+usagemax-display = "usagemax_display.display:main"
+
+[project.entry-points."usagemax_display.frame_sinks"]
+trofeo = "usagemax_display.display:create_trofeo_transport"
+
+[project.entry-points."usagemax_display.renderers"]
+usagemax = "usagemax_display.display:create_hud_renderer"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+usagemax_display = ["py.typed"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP"]
+ignore = ["E501"]

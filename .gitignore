@@ -1,0 +1,39 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+*.egg-info/
+build/
+dist/
+.venv/
+venv/
+
+# Local runtime configuration and telemetry
+config.json
+config.local.json
+.env
+.env.*
+!.env.example
+otel/
+remote-events/
+*.otlp.jsonl
+pet-state.json
+
+# Native build outputs and local device captures
+native/**/target/
+native/**/*.exe
+native/**/*.dll
+native/**/*.dylib
+native/**/*.so
+preview*.jpg
+preview*.png
+*.wire.jpg
+
+# Editor and operating-system files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

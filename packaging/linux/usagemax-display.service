@@ -1,0 +1,14 @@
+[Unit]
+Description=UsageMax Display renderer (user session)
+After=default.target
+
+[Service]
+Type=simple
+ExecStart=%h/.local/bin/usagemax-display --config %h/.config/usagemax-display/config.json
+WorkingDirectory=%h/.local/share/usagemax-display
+Restart=on-failure
+RestartSec=5s
+Environment=PYTHONUNBUFFERED=1
+
+[Install]
+WantedBy=default.target

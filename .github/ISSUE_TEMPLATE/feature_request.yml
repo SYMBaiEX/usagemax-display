@@ -1,0 +1,26 @@
+name: Feature request
+description: Suggest an improvement or extension
+title: "[Feature]: "
+labels: [enhancement]
+body:
+  - type: textarea
+    id: need
+    attributes:
+      label: What need should this address?
+      description: Explain who benefits and the use case.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed behavior
+      description: Describe the expected behavior, including relevant telemetry, renderer, or transport interfaces.
+    validations:
+      required: true
+  - type: textarea
+    id: impact
+    attributes:
+      label: Compatibility and privacy impact
+      description: Note affected operating systems, hardware, inputs, and any data-handling implications.
+    validations:
+      required: true

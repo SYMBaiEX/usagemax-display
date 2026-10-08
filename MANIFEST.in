@@ -1,0 +1,11 @@
+include CHANGELOG.md
+include CODE_OF_CONDUCT.md
+include CONTRIBUTING.md
+include LICENSE
+include README.md
+include SECURITY.md
+include config.example.json
+include examples/telemetry.jsonl.example
+recursive-include docs *.md
+recursive-include native/trofeo-pump Cargo.toml Cargo.lock *.rs
+recursive-include packaging *.md *.plist *.service *.ps1 *.sh

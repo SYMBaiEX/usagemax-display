@@ -1,0 +1,2 @@
+{"kind":"usage","timestamp":"2026-01-02T03:04:05Z","harness":"Example runtime","provider":"Example provider","model":"Example model","session_id":"example-session-001","session_tokens":12000,"input_tokens":9000,"output_tokens":3000}
+{"kind":"topology","timestamp":"2026-01-02T03:04:05Z","parent_id":"example-session-001","child_id":"example-session-002","parent_name":"Coordinator","child_name":"Research","parent_harness":"Example runtime","child_harness":"Example runtime","parent_model":"Example model","child_model":"Example model","status":"OPEN"}
